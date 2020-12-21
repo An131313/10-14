@@ -1,10 +1,10 @@
-package account;
+package account19;
 
 import java.util.Date;
 
 public class Account {
 	private int id = 0;
-	private double balance = 0;
+	protected double balance = 0;
 	private double yearInterestRate  = 0;
 	private Date dateCreated = new Date();
 	
@@ -55,13 +55,15 @@ public class Account {
 		return monthlyInterest;
 	}
 	
-	public double withdraw(double x) {
-		
-		return this.balance -= x;
+	public void withdraw(double x) {
+		this.balance -= x;
 	}
 	
-	public double deposit(double y) {
-		return this.balance += y;
+	public void deposit(double y) {
+		this.balance += y;
 	}
 	
+	public String toString() {
+		return "Balance: " + balance;
+	}
 }

@@ -1,21 +1,18 @@
-package savingsAccount;
+package account19;
 
-public class SavingsAccount {
-	public double balance;
-	public double interestRate = 0.1;
-	public String name;
+public class SavingsAccount extends Account {
 	
-	public void deposit( double sum ) {
-		balance += sum;
-		System.out.println("Successful deposit " + sum + " new balance " + balance);
+	public SavingsAccount( int x, double y){
+		super( x, y);
 	}
 	
-	public void withdraw (double sum ) {
-		if ( sum < 0 || sum > balance) {
-			System.out.println("Error");
-			return;	
+	public void withdraw(double x) {
+		if(balance >= x) {
+		balance -= x;
 		}
-		balance -= sum;
-		System.out.println("Successful withdraw " + sum + " new balance " + balance);
+	}
+	
+	public String toString() {
+		return super.toString() + " Savings account";
 	}
 }
